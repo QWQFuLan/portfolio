@@ -1,5 +1,5 @@
 import FlipCard from '@/components/reactbits/FlipCard';
-import { SKILLS } from '../data';
+import { SKILLS, STR, type Lang } from '../data';
 
 function ProgressBlocks({ level, color }: { level: number; color: string }) {
   return (
@@ -15,18 +15,17 @@ function ProgressBlocks({ level, color }: { level: number; color: string }) {
   );
 }
 
-export default function Skills() {
+export default function Skills({ lang }: { lang: Lang }) {
+  const t = STR[lang];
   return (
     <section id="skills" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
       <div className="text-center">
-        <p className="pixel-chip mb-4 inline-block">SKILLS · 技能</p>
-        <h2 className="font-pixel text-2xl md:text-3xl">技能卡片 · 點擊翻面</h2>
-        <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground md:text-base">
-          每一張卡片都可以翻過來，看看我正在學什麼。
-        </p>
+        <p className="pixel-chip mb-4 inline-block">{t.skillsChip}</p>
+        <h2 className="font-pixel text-2xl md:text-3xl">{t.skillsTitle}</h2>
+        <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground md:text-base">{t.skillsSub}</p>
       </div>
 
-      <div className="mt-14 grid grid-cols-1 justify-items-center gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-14 grid grid-cols-1 justify-items-center gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {SKILLS.map((skill) => (
           <FlipCard
             key={skill.id}
@@ -58,8 +57,10 @@ export default function Skills() {
                 >
                   {skill.badge}
                 </span>
-                <span className="font-pixel text-base">{skill.name}</span>
-                <span className="text-xs text-muted-foreground">{skill.tagline}</span>
+                <span className="font-pixel text-base">{lang === 'zh' ? skill.name : skill.nameEn}</span>
+                <span className="text-xs text-muted-foreground">
+                  {lang === 'zh' ? skill.tagline : skill.taglineEn}
+                </span>
                 <span className="font-pixel text-[0.5rem] tracking-widest text-muted-foreground">
                   CLICK TO FLIP
                 </span>
@@ -68,9 +69,11 @@ export default function Skills() {
             back={
               <div className="flex h-full flex-col items-center justify-center gap-5 p-6 text-center">
                 <span className="font-pixel text-base" style={{ color: skill.color }}>
-                  {skill.name}
+                  {lang === 'zh' ? skill.name : skill.nameEn}
                 </span>
-                <p className="text-xs leading-6 text-foreground">{skill.detail}</p>
+                <p className="text-xs leading-6 text-foreground">
+                  {lang === 'zh' ? skill.detail : skill.detailEn}
+                </p>
                 <ProgressBlocks level={skill.progress} color={skill.color} />
                 <span className="font-pixel text-[0.5rem] tracking-widest text-muted-foreground">
                   LEARNING

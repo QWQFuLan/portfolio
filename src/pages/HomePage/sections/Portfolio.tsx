@@ -1,7 +1,7 @@
 import DepthCarousel from '@/components/reactbits/DepthCarousel';
-import { GITHUB_URL, PROJECTS, type Project } from '../data';
+import { GITHUB_URL, PROJECTS, STR, type Lang, type Project } from '../data';
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, lang }: { project: Project; lang: Lang }) {
   return (
     <div className="flex h-full flex-col justify-between bg-[#16202e] p-6 text-left">
       <div>
@@ -16,8 +16,12 @@ function ProjectCard({ project }: { project: Project }) {
             REPO
           </span>
         </div>
-        <h3 className="mt-6 font-pixel text-sm leading-6 text-foreground">{project.name}</h3>
-        <p className="mt-4 text-xs leading-6 text-muted-foreground">{project.desc}</p>
+        <h3 className="mt-6 font-pixel text-sm leading-6 text-foreground">
+          {lang === 'zh' ? project.name : project.nameEn}
+        </h3>
+        <p className="mt-4 text-xs leading-6 text-muted-foreground">
+          {lang === 'zh' ? project.desc : project.descEn}
+        </p>
       </div>
       <div className="mt-6 flex items-center justify-between">
         <span className="font-pixel text-[0.5rem] tracking-widest text-muted-foreground">GITHUB</span>
@@ -32,22 +36,20 @@ function ProjectCard({ project }: { project: Project }) {
   );
 }
 
-const CAROUSEL_ITEMS = PROJECTS.map((project) => ({
-  content: <ProjectCard project={project} />,
-  url: project.url,
-  alt: project.name,
-}));
-
-export default function Portfolio() {
+export default function Portfolio({ lang }: { lang: Lang }) {
+  const t = STR[lang];
+  const items = PROJECTS.map((project) => ({
+    content: <ProjectCard project={project} lang={lang} />,
+    url: project.url,
+    alt: project.name,
+  }));
   return (
     <section id="portfolio" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <div>
-          <p className="pixel-chip mb-4">PORTFOLIO · 作品集</p>
-          <h2 className="font-pixel text-2xl md:text-3xl">我的方塊世界</h2>
-          <p className="mt-4 max-w-xl text-sm text-muted-foreground md:text-base">
-            一些親手蓋出來的小作品。點擊卡片會直接打開對應的 GitHub 倉庫。
-          </p>
+          <p className="pixel-chip mb-4">{t.portfolioChip}</p>
+          <h2 className="font-pixel text-2xl md:text-3xl">{t.portfolioTitle}</h2>
+          <p className="mt-4 max-w-xl text-sm text-muted-foreground md:text-base">{t.portfolioSub}</p>
         </div>
         <a href={GITHUB_URL} target="_blank" rel="noreferrer" className="pixel-btn pixel-btn--ghost">
           GitHub ↗
@@ -56,7 +58,7 @@ export default function Portfolio() {
 
       <div className="mt-14 h-[480px] md:h-[520px]">
         <DepthCarousel
-          items={CAROUSEL_ITEMS}
+          items={items}
           cardWidth={340}
           cardHeight={420}
           radius={10}
@@ -75,7 +77,7 @@ export default function Portfolio() {
       </div>
 
       <p className="mt-8 text-center font-pixel text-[0.58rem] tracking-widest text-muted-foreground">
-        點擊卡片前往 GitHub · 拖曳 / 滾輪切換
+        {t.portfolioHint}
       </p>
     </section>
   );

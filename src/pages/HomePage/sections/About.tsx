@@ -1,10 +1,12 @@
 import DepthText from '@/components/reactbits/DepthText';
+import { STR, type Lang } from '../data';
 
-export default function About() {
+export default function About({ lang }: { lang: Lang }) {
+  const t = STR[lang];
   return (
     <section id="about" className="mx-auto max-w-4xl px-6 py-24 md:py-32">
       <div className="pixel-frame p-8 md:p-12">
-        <p className="pixel-chip mb-8">ABOUT · 關於我</p>
+        <p className="pixel-chip mb-8">{t.aboutChip}</p>
         <h2 className="font-pixel leading-none">
           <DepthText
             text="HELLO"
@@ -23,18 +25,14 @@ export default function About() {
             shadow
           />
         </h2>
-        <p className="mt-8 text-lg md:text-xl">
-          我是 <span className="font-pixel text-primary">FULAN</span>，正在學習編程。
-        </p>
-        <p className="mt-4 text-sm leading-7 text-muted-foreground md:text-base">
-          我喜歡 <span className="text-foreground">我的世界（Minecraft）</span>，所以把這個網站做成了像素風。
-          目前正在學習 C++、Python 和資料庫，目標是用程式把腦海裡的想法，像在遊戲裡堆方塊一樣，
-          一塊一塊建造出來。
-        </p>
+        <p className="mt-8 text-lg md:text-xl">{t.aboutLine1}</p>
+        <p className="mt-4 text-sm leading-7 text-muted-foreground md:text-base">{t.aboutLine2}</p>
         <div className="mt-8 flex flex-wrap gap-2">
-          <span className="pixel-chip">正在學習編程</span>
-          <span className="pixel-chip">像素愛好者</span>
-          <span className="pixel-chip">Minecraft 玩家</span>
+          {t.tags.map((tag) => (
+            <span key={tag} className="pixel-chip">
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
     </section>

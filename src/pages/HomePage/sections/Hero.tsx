@@ -1,6 +1,8 @@
 import DepthText from '@/components/reactbits/DepthText';
+import { STR, type Lang } from '../data';
 
-export default function Hero() {
+export default function Hero({ lang }: { lang: Lang }) {
+  const t = STR[lang];
   return (
     <section id="home" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pb-10">
       <div className="pixel-grid absolute inset-0" aria-hidden="true" />
@@ -24,15 +26,13 @@ export default function Hero() {
             shadow
           />
         </h1>
-        <p className="mt-8 max-w-md text-sm text-muted-foreground md:text-base">
-          正在學習編程。用一個一個方塊，慢慢建造自己的世界。
-        </p>
+        <p className="mt-8 max-w-md text-sm text-muted-foreground md:text-base">{t.heroTagline}</p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a href="#portfolio" className="pixel-btn">
-            See Works
+            {t.seeWorks}
           </a>
           <a href="#contact" className="pixel-btn pixel-btn--ghost">
-            聯絡我
+            {t.contactMe}
           </a>
         </div>
       </div>
