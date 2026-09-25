@@ -350,7 +350,7 @@ export default function FarmAnimals() {
   }, []);
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 hidden sm:block" aria-hidden="true">
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20" aria-hidden="true">
       <div className="pointer-events-auto">
         <Grazer initialLeft={10} walkBand={12} grazeMs={2600} bottom={22}>
           <Cow />

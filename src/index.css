@@ -166,3 +166,39 @@ section[id] {
   bottom: 0;
   animation: trader-walk-in 11s linear forwards;
 }
+
+/* --- nether scene: hovering blaze & drifting ghast --- */
+@keyframes blaze-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.blaze-bob {
+  animation: blaze-bob 2.4s ease-in-out infinite;
+}
+
+/* blaze patrols left ↔ right across the middle of the nether scene */
+@keyframes blaze-drift {
+  0%, 100% { left: 26%; }
+  50% { left: 64%; }
+}
+.blaze-drift {
+  animation: blaze-drift 9s ease-in-out infinite;
+}
+
+/* blaze rods float & orbit around the core */
+@keyframes blaze-rods-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.blaze-rods {
+  animation: blaze-rods-spin 5s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes ghast-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.ghast-bob {
+  animation: ghast-bob 3.2s ease-in-out infinite;
+}

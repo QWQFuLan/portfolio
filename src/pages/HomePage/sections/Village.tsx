@@ -69,7 +69,7 @@ function FarmPlot() {
 
 export default function Village() {
   return (
-    <section className="relative h-[200px] w-full" aria-label="Village">
+    <section className="relative h-[220px] w-full" aria-label="Village">
       {/* house — left side, sitting on the grass */}
       <div className="absolute" style={{ left: '8%', bottom: 14 }}>
         <House />
@@ -88,7 +88,7 @@ export default function Village() {
 
       {/* villagers walking on the grass — grab & throw like the farm animals.
           High z-index so a thrown villager flies over the About card above. */}
-      <div className="pointer-events-none absolute inset-0" style={{ zIndex: 50 }}>
+      <div className="pointer-events-none absolute inset-0" style={{ zIndex: 30 }}>
         <div className="pointer-events-auto absolute inset-0">
           <Grazer initialLeft={28} walkBand={16} grazeMs={2000} bottom={16}>
             <Villager robe="#8a6a3a" />

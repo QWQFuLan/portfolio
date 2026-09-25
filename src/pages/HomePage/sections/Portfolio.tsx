@@ -1,4 +1,5 @@
 import DepthCarousel from '@/components/reactbits/DepthCarousel';
+import Cave from './Cave';
 import { GITHUB_URL, PROJECTS, STR, type Lang, type Project } from '../data';
 
 function ProjectCard({ project, lang }: { project: Project; lang: Lang }) {
@@ -44,7 +45,11 @@ export default function Portfolio({ lang }: { lang: Lang }) {
     alt: project.name,
   }));
   return (
-    <section id="portfolio" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+    // Transparent background on purpose: the fixed PixelTrail layer (z-index: 0)
+    // lives below the app content (z-index: 1), so an opaque section background
+    // would cover the mouse trail. Keep this section transparent like the rest.
+    <section id="portfolio" className="relative py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <div>
           <p className="pixel-chip mb-4">{t.portfolioChip}</p>
@@ -80,6 +85,12 @@ export default function Portfolio({ lang }: { lang: Lang }) {
       <p className="mt-8 text-center font-pixel text-[0.58rem] tracking-widest text-muted-foreground">
         {t.portfolioHint}
       </p>
+      </div>
+
+      {/* cave scene spans full width below the content */}
+      <div className="mt-14">
+        <Cave />
+      </div>
     </section>
   );
 }
