@@ -73,6 +73,7 @@ export default function Portfolio({ lang }: { lang: Lang }) {
           autoplay
           autoplayDelay={3200}
           loop
+          wheelEnabled={false}
         />
       </div>
 

@@ -29,6 +29,7 @@ export interface DepthCarouselProps {
   loop?: boolean;
   showControls?: boolean;
   showIndicators?: boolean;
+  wheelEnabled?: boolean;
   onChange?: (index: number, item: DepthCarouselItem) => void;
   className?: string;
 }

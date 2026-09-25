@@ -1,4 +1,5 @@
 import DepthText from '@/components/reactbits/DepthText';
+import FarmAnimals from './FarmAnimals';
 import { STR, type Lang } from '../data';
 
 export default function Hero({ lang }: { lang: Lang }) {
@@ -37,6 +38,7 @@ export default function Hero({ lang }: { lang: Lang }) {
         </div>
       </div>
       <div className="pixel-grass absolute inset-x-0 bottom-0" aria-hidden="true" />
+      <FarmAnimals />
     </section>
   );
 }

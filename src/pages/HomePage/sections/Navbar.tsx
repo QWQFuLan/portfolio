@@ -5,11 +5,11 @@ const NAV_IDS = ['home', 'about', 'portfolio', 'skills', 'contact'] as const;
 export default function Navbar({ lang, onToggleLang }: { lang: Lang; onToggleLang: () => void }) {
   const labels = STR[lang].nav;
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-4 sm:pt-4">
       <nav className="flex max-w-full items-center gap-1 rounded-sm border-2 border-black bg-card px-2 py-1.5 shadow-[4px_4px_0_0_rgba(0,0,0,0.45)]">
         <a
           href="#home"
-          aria-label="回到首頁"
+          aria-label="Back to home"
           className="grid h-8 w-8 shrink-0 place-items-center border-2 border-black bg-primary font-pixel text-xs text-black shadow-[2px_2px_0_0_rgba(0,0,0,0.5)] transition-transform hover:scale-105"
         >
           F
@@ -31,7 +31,7 @@ export default function Navbar({ lang, onToggleLang }: { lang: Lang; onToggleLan
           type="button"
           onClick={onToggleLang}
           title={lang === 'zh' ? 'Switch to English' : '切換中文'}
-          className="shrink-0 rounded-sm border-2 border-black bg-primary px-2 py-1 font-pixel text-[0.55rem] text-black shadow-[2px_2px_0_0_rgba(0,0,0,0.5)] transition-transform hover:scale-105"
+          className="shrink-0 rounded-sm border-2 border-black bg-primary px-2.5 py-1 font-pixel text-[0.55rem] text-black shadow-[2px_2px_0_0_rgba(0,0,0,0.5)] transition-transform hover:scale-105"
         >
           {lang === 'zh' ? 'EN' : '中'}
         </button>
