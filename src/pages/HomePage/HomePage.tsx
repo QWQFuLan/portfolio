@@ -13,7 +13,7 @@ export default function HomePage() {
   const [lang, setLang] = useState<Lang>('zh');
   return (
     // The dark page background lives on <body>; this root stays transparent so
-    // the fixed PixelTrail layer (z-index: 0) shows through beneath the content.
+    // the page background shows through the content sections.
     <div className="min-h-screen text-foreground">
       <Navbar lang={lang} onToggleLang={() => setLang((l) => (l === 'zh' ? 'en' : 'zh'))} />
       <main>

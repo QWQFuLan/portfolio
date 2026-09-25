@@ -45,9 +45,8 @@ export default function Portfolio({ lang }: { lang: Lang }) {
     alt: project.name,
   }));
   return (
-    // Transparent background on purpose: the fixed PixelTrail layer (z-index: 0)
-    // lives below the app content (z-index: 1), so an opaque section background
-    // would cover the mouse trail. Keep this section transparent like the rest.
+    // Keep this section transparent so the dark page background stays
+    // continuous behind the cards, like the rest of the page.
     <section id="portfolio" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
