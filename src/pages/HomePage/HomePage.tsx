@@ -6,6 +6,7 @@ import Village from './sections/Village';
 import Portfolio from './sections/Portfolio';
 import Skills from './sections/Skills';
 import Contact from './sections/Contact';
+import End from './sections/End';
 import Footer from './sections/Footer';
 import type { Lang } from './data';
 
@@ -24,6 +25,7 @@ export default function HomePage() {
         <Skills lang={lang} />
         <Contact lang={lang} />
       </main>
+      <End />
       <Footer lang={lang} />
     </div>
   );

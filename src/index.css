@@ -202,3 +202,54 @@ section[id] {
 .ghast-bob {
   animation: ghast-bob 3.2s ease-in-out infinite;
 }
+
+/* --- end scene: crystal explosion, glow & circling dragon --- */
+
+/* soft pulsing glow around a healthy end crystal */
+@keyframes end-glow-pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+.end-glow {
+  animation: end-glow-pulse 1.8s ease-in-out infinite;
+}
+
+/* white flash expanding from the explosion point */
+@keyframes crystal-flash {
+  0% { transform: translate(-50%, -50%) scale(0.25); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.4); opacity: 0; }
+}
+.crystal-flash {
+  animation: crystal-flash 0.5s ease-out forwards;
+}
+
+/* crystal itself shatters apart */
+@keyframes crystal-shatter {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  100% { transform: scale(1.6) rotate(14deg); opacity: 0; }
+}
+.crystal-shatter {
+  animation: crystal-shatter 0.4s ease-out forwards;
+}
+
+/* flying shards — radiate outward with a little gravity */
+.crystal-particle {
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  margin-top: -3.5px;
+  animation: crystal-fly 0.75s cubic-bezier(0.15, 0.6, 0.3, 1) forwards;
+}
+@keyframes crystal-fly {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--dx), calc(var(--dy) + 46px)) scale(0.4); opacity: 0; }
+}
+
+/* ender dragon wing flap while circling */
+@keyframes dragon-wing {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+.dragon-wing {
+  animation: dragon-wing 0.9s ease-in-out infinite;
+}
