@@ -187,7 +187,7 @@ function EggPedestal() {
   return (
     <div className="pointer-events-none absolute" style={{ left: '50%', transform: 'translateX(-50%)', bottom: 24, zIndex: 6 }}>
       <div style={{ position: 'relative', width: 66, height: 52 }}>
-        {/* pedestal body — end stone with obsidian base */}
+        {/* pedestal body — obsidian */}
         <div
           style={{
             position: 'absolute',
@@ -197,8 +197,9 @@ function EggPedestal() {
             width: 44,
             height: 40,
             background:
-              'repeating-linear-gradient(0deg, #d8d2a6 0 4px, #c6bf8f 4px 5px), repeating-linear-gradient(90deg, #d8d2a6 0 14px, #c6bf8f 14px 15px)',
-            border: '3px solid #8f885f',
+              'repeating-linear-gradient(0deg, #160b22 0 6px, #241236 6px 12px, #1c0f2c 12px 18px, #2a1840 18px 24px), repeating-linear-gradient(90deg, #160b22 0 8px, #241236 8px 16px, #2a1840 16px 24px)',
+            border: '3px solid #0d0616',
+            boxShadow: 'inset -6px 0 0 rgba(0,0,0,0.3)',
           }}
         />
         {/* obsidian trim ring at the base */}
@@ -214,7 +215,7 @@ function EggPedestal() {
             border: '3px solid #0d0616',
           }}
         />
-        {/* top slab */}
+        {/* top slab — obsidian */}
         <div
           style={{
             position: 'absolute',
@@ -223,8 +224,8 @@ function EggPedestal() {
             transform: 'translateX(-50%)',
             width: 58,
             height: 12,
-            background: 'repeating-linear-gradient(90deg, #ded8ac 0 14px, #c6bf8f 14px 15px)',
-            border: '3px solid #8f885f',
+            background: 'repeating-linear-gradient(90deg, #241236 0 8px, #2a1840 8px 16px, #1c0f2c 16px 24px)',
+            border: '3px solid #0d0616',
           }}
         />
         {/* the egg sits on the slab */}
