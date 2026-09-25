@@ -3,36 +3,37 @@ import { motion } from 'framer-motion';
 
 /* --- Pixel-art Minecraft End dimension scene (side view) --- */
 
-/* End crystal — pale glass diamond with a glowing core */
+/* End crystal — diamond of pale-purple glass with a red core (match reference) */
 function EndCrystalSprite() {
   return (
     <svg viewBox="0 0 14 20" width="34" height="48" style={{ imageRendering: 'pixelated' }} aria-hidden="true">
-      {/* outline */}
-      <rect x="5" y="1" width="4" height="2" fill="#6f9cc6" />
-      <rect x="4" y="3" width="6" height="2" fill="#6f9cc6" />
-      <rect x="3" y="5" width="8" height="3" fill="#6f9cc6" />
-      <rect x="2" y="8" width="10" height="4" fill="#6f9cc6" />
-      <rect x="3" y="12" width="8" height="3" fill="#6f9cc6" />
-      <rect x="4" y="15" width="6" height="2" fill="#6f9cc6" />
-      <rect x="6" y="17" width="2" height="2" fill="#6f9cc6" />
-      {/* glass fill */}
-      <rect x="5" y="2" width="2" height="2" fill="#dcecfc" />
-      <rect x="4" y="4" width="4" height="2" fill="#dcecfc" />
-      <rect x="3" y="6" width="6" height="2" fill="#eaf4ff" />
-      <rect x="2" y="9" width="8" height="2" fill="#f2f9ff" />
-      <rect x="3" y="11" width="6" height="2" fill="#dcecfc" />
-      <rect x="4" y="14" width="4" height="2" fill="#dcecfc" />
-      <rect x="6" y="16" width="2" height="1" fill="#dcecfc" />
-      {/* glowing core */}
-      <rect x="5" y="4" width="2" height="6" fill="#8fd8ff" />
-      <rect x="4" y="8" width="4" height="3" fill="#bfe6ff" />
-      <rect x="6" y="6" width="2" height="8" fill="#ffffff" />
+      {/* outline (deep purple) */}
+      <rect x="5" y="1" width="4" height="2" fill="#5a3a9a" />
+      <rect x="4" y="3" width="6" height="2" fill="#5a3a9a" />
+      <rect x="3" y="5" width="8" height="3" fill="#5a3a9a" />
+      <rect x="2" y="8" width="10" height="4" fill="#5a3a9a" />
+      <rect x="3" y="12" width="8" height="3" fill="#5a3a9a" />
+      <rect x="4" y="15" width="6" height="2" fill="#5a3a9a" />
+      <rect x="6" y="17" width="2" height="2" fill="#5a3a9a" />
+      {/* glass fill — light purple shades */}
+      <rect x="5" y="2" width="2" height="2" fill="#e8dcff" />
+      <rect x="4" y="4" width="4" height="2" fill="#e0d0f8" />
+      <rect x="3" y="6" width="6" height="2" fill="#d8c4f0" />
+      <rect x="2" y="9" width="8" height="2" fill="#d0bce8" />
+      <rect x="3" y="11" width="6" height="2" fill="#c4a8e0" />
+      <rect x="4" y="14" width="4" height="2" fill="#b89cd4" />
+      <rect x="6" y="16" width="2" height="1" fill="#b89cd4" />
+      {/* red core gem */}
+      <rect x="4" y="6" width="6" height="5" fill="#e0483c" />
+      <rect x="5" y="5" width="4" height="3" fill="#f07060" />
+      <rect x="4" y="7" width="6" height="2" fill="#d04034" />
+      <rect x="5" y="10" width="4" height="2" fill="#a02c28" />
     </svg>
   );
 }
 
 /* Crystal that explodes into particles when clicked, then regrows after 10s */
-const PARTICLE_COLORS = ['#eaf6ff', '#9fe0ff', '#c9b4ff', '#ffffff'];
+const PARTICLE_COLORS = ['#f0e6ff', '#c9a8ff', '#e0483c', '#ffffff'];
 
 function ExplodableCrystal() {
   const [phase, setPhase] = useState<'idle' | 'boom' | 'gone'>('idle');
@@ -76,7 +77,7 @@ function ExplodableCrystal() {
             width: 64,
             height: 64,
             transform: 'translate(-50%, -50%)',
-            background: 'radial-gradient(circle, rgba(159,224,255,0.5), transparent 70%)',
+            background: 'radial-gradient(circle, rgba(224,208,255,0.5), transparent 70%)',
             filter: 'blur(3px)',
           }}
         />
@@ -96,7 +97,7 @@ function ExplodableCrystal() {
             width: 60,
             height: 60,
             transform: 'translate(-50%, -50%)',
-            background: 'radial-gradient(circle, rgba(255,255,255,0.95), rgba(159,224,255,0.5) 45%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.95), rgba(201,168,255,0.55) 45%, transparent 70%)',
           }}
         />
       )}
@@ -110,7 +111,7 @@ function ExplodableCrystal() {
               left: '50%',
               top: '50%',
               background: p.color,
-              boxShadow: `0 0 0 1px ${p.color === '#ffffff' ? '#9fd4ff' : '#5a7aa8'}`,
+              boxShadow: `0 0 0 1px ${p.color === '#ffffff' ? '#c9a8ff' : '#8a5ac8'}`,
               ['--dx' as string]: `${p.dx}px`,
               ['--dy' as string]: `${p.dy}px`,
             }}
@@ -182,12 +183,17 @@ function DragonEgg() {
   );
 }
 
-/* Central pedestal holding the dragon egg */
+/* Central pedestal holding the dragon egg — bedrock, like the egg's altar in the End */
+const BEDROCK_BG =
+  'repeating-linear-gradient(0deg, #363636 0 4px, #3e3e3e 4px 8px, #2e2e2e 8px 11px, #414141 11px 14px), repeating-linear-gradient(90deg, #393939 0 9px, #2f2f2f 9px 17px, #444444 17px 24px, #333333 24px 32px)';
+const BEDROCK_BG_LIGHT =
+  'repeating-linear-gradient(0deg, #3e3e3e 0 4px, #474747 4px 8px, #363636 8px 11px, #4a4a4a 11px 14px), repeating-linear-gradient(90deg, #414141 0 9px, #363636 9px 17px, #4d4d4d 17px 24px, #3a3a3a 24px 32px)';
+
 function EggPedestal() {
   return (
     <div className="pointer-events-none absolute" style={{ left: '50%', transform: 'translateX(-50%)', bottom: 24, zIndex: 6 }}>
       <div style={{ position: 'relative', width: 66, height: 52 }}>
-        {/* pedestal body — obsidian */}
+        {/* pedestal body — bedrock */}
         <div
           style={{
             position: 'absolute',
@@ -196,13 +202,18 @@ function EggPedestal() {
             transform: 'translateX(-50%)',
             width: 44,
             height: 40,
-            background:
-              'repeating-linear-gradient(0deg, #160b22 0 6px, #241236 6px 12px, #1c0f2c 12px 18px, #2a1840 18px 24px), repeating-linear-gradient(90deg, #160b22 0 8px, #241236 8px 16px, #2a1840 16px 24px)',
-            border: '3px solid #0d0616',
-            boxShadow: 'inset -6px 0 0 rgba(0,0,0,0.3)',
+            background: BEDROCK_BG,
+            border: '3px solid #141414',
+            boxShadow: 'inset -6px 0 0 rgba(0,0,0,0.35)',
           }}
-        />
-        {/* obsidian trim ring at the base */}
+        >
+          {/* darker mottled patches */}
+          <div style={{ position: 'absolute', top: 6, left: 8, width: 7, height: 5, background: '#242424' }} />
+          <div style={{ position: 'absolute', top: 22, left: 20, width: 9, height: 6, background: '#262626' }} />
+          <div style={{ position: 'absolute', top: 30, left: 6, width: 5, height: 4, background: '#202020' }} />
+          <div style={{ position: 'absolute', top: 12, left: 30, width: 6, height: 5, background: '#232323' }} />
+        </div>
+        {/* bedrock base ring */}
         <div
           style={{
             position: 'absolute',
@@ -211,11 +222,11 @@ function EggPedestal() {
             transform: 'translateX(-50%)',
             width: 54,
             height: 10,
-            background: 'repeating-linear-gradient(90deg, #1c0f2c 0 9px, #2a1840 9px 18px)',
-            border: '3px solid #0d0616',
+            background: BEDROCK_BG,
+            border: '3px solid #141414',
           }}
         />
-        {/* top slab — obsidian */}
+        {/* top slab — bedrock */}
         <div
           style={{
             position: 'absolute',
@@ -224,10 +235,12 @@ function EggPedestal() {
             transform: 'translateX(-50%)',
             width: 58,
             height: 12,
-            background: 'repeating-linear-gradient(90deg, #241236 0 8px, #2a1840 8px 16px, #1c0f2c 16px 24px)',
-            border: '3px solid #0d0616',
+            background: BEDROCK_BG_LIGHT,
+            border: '3px solid #141414',
           }}
-        />
+        >
+          <div style={{ position: 'absolute', top: 4, left: 16, width: 8, height: 4, background: '#333333' }} />
+        </div>
         {/* the egg sits on the slab */}
         <div style={{ position: 'absolute', bottom: 52, left: '50%', transform: 'translateX(-50%)' }}>
           <DragonEgg />
