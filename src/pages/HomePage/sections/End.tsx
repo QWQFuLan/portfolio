@@ -279,26 +279,35 @@ function EnderDragonSprite() {
 }
 
 /* Ender Dragon circles the central area between the two pillars */
+const ORBIT_LEFT = ['13%', '50%', '87%', '50%', '13%'];
+const ORBIT_TOP = ['26%', '9%', '26%', '48%', '26%'];
+const ORBIT_TIMES = [0, 0.25, 0.5, 0.75, 1];
+
 function DragonCircler() {
   return (
     <div className="pointer-events-none absolute inset-0" style={{ zIndex: 8 }}>
       <motion.div
         className="absolute"
-        style={{ left: '13%', top: '26%' }}
+        style={{ left: ORBIT_LEFT[0], top: ORBIT_TOP[0] }}
         animate={{
-          left: ['13%', '50%', '87%', '50%', '13%'],
-          top: ['26%', '9%', '26%', '48%', '26%'],
-          scaleX: [1, 1, -1, -1, 1],
+          left: ORBIT_LEFT,
+          top: ORBIT_TOP,
         }}
         transition={{
           duration: 18,
           repeat: Infinity,
           ease: 'linear',
-          times: [0, 0.25, 0.5, 0.75, 1],
+          times: ORBIT_TIMES,
         }}
       >
-        <div className="dragon-wing">
-          <EnderDragonSprite />
+        {/* .dragon-face flips the sprite so its head always leads the flight
+            direction: head-right (scaleX -1) on the outbound half, head-left
+            (scaleX 1) on the return half. The flip is instant via CSS keyframes
+            (framer-motion would interpolate it gradually and fly backwards). */}
+        <div className="dragon-face">
+          <div className="dragon-wing">
+            <EnderDragonSprite />
+          </div>
         </div>
       </motion.div>
     </div>

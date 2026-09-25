@@ -253,3 +253,14 @@ section[id] {
 .dragon-wing {
   animation: dragon-wing 0.9s ease-in-out infinite;
 }
+
+/* the dragon's head always leads the flight direction: it mirrors (head on the
+   right) for the whole outbound half of the orbit and faces left on the return
+   half. Instant flip via stepped keyframes — synced to the 18s orbit above. */
+@keyframes dragon-face {
+  0%, 49.9% { transform: scaleX(-1); }
+  50%, 100% { transform: scaleX(1); }
+}
+.dragon-face {
+  animation: dragon-face 18s linear infinite;
+}
