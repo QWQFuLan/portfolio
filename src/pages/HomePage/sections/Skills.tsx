@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import FlipCard from '@/components/reactbits/FlipCard';
 import Nether from './Nether';
 import { SKILLS, STR, type Lang } from '../data';
@@ -19,8 +20,15 @@ function ProgressBlocks({ level, color }: { level: number; color: string }) {
 export default function Skills({ lang }: { lang: Lang }) {
   const t = STR[lang];
   return (
-    <section id="skills" className="relative py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="skills" className="relative overflow-hidden pt-24 md:pt-32">
+      {/* Dark nether background: dark red & black gradient, no image asset */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(to bottom, #140607 0%, #24100a 32%, #33120c 62%, #3d130d 100%)' }}
+        aria-hidden="true"
+      />
+
+      <div className="relative mx-auto max-w-6xl px-6">
         <div className="text-center">
           <p className="pixel-chip mb-4 inline-block">{t.skillsChip}</p>
           <h2 className="font-pixel text-2xl md:text-3xl">{t.skillsTitle}</h2>

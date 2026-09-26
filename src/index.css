@@ -85,7 +85,7 @@ section[id] {
 .pixel-grass {
   height: 28px;
   background-image:
-    linear-gradient(to bottom, #5dba4a 0 12px, #7c5a3a 12px 18px, transparent 18px 28px);
+    linear-gradient(to bottom, #5dba4a 0 12px, #7c5a3a 12px 28px);
   background-size: 16px 28px;
   image-rendering: pixelated;
 }
@@ -165,6 +165,15 @@ section[id] {
   right: 0;
   bottom: 0;
   animation: trader-walk-in 11s linear forwards;
+}
+
+/* --- drifting pixel clouds (hero day clouds & about night clouds) --- */
+@keyframes cloud-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(9vw); }
+}
+.cloud-drift {
+  animation: cloud-drift 30s ease-in-out infinite alternate;
 }
 
 /* --- nether scene: hovering blaze & drifting ghast --- */

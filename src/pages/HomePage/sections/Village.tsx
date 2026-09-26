@@ -70,6 +70,13 @@ function FarmPlot() {
 export default function Village() {
   return (
     <section className="relative h-[220px] w-full" aria-label="Village">
+      {/* night sky background — continues seamlessly from the About section:
+          top colour matches About's bottom (#1c2650), then darkens downward */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(to bottom, #1c2650 0%, #131a3f 40%, #0a0e2a 100%)' }}
+        aria-hidden="true"
+      />
       {/* house — left side, sitting on the grass */}
       <div className="absolute" style={{ left: '8%', bottom: 14 }}>
         <House />
@@ -87,7 +94,8 @@ export default function Village() {
       <div className="absolute inset-x-0 bottom-0 h-1" style={{ background: '#1f5a1f' }} />
 
       {/* villagers walking on the grass — grab & throw like the farm animals.
-          High z-index so a thrown villager flies over the About card above. */}
+          No overflow-hidden here: a thrown villager can fly out of the strip,
+          over the About card above, then fall back onto the grass. */}
       <div className="pointer-events-none absolute inset-0" style={{ zIndex: 30 }}>
         <div className="pointer-events-auto absolute inset-0">
           <Grazer initialLeft={28} walkBand={16} grazeMs={2000} bottom={16}>
