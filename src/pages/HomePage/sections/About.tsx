@@ -138,6 +138,25 @@ export default function About({ lang }: { lang: Lang }) {
               </span>
             ))}
           </div>
+
+          {/* pixel-art journey timeline */}
+          <div className="mt-12">
+            <p className="pixel-chip mb-7">{t.timelineChip}</p>
+            <ol className="relative ml-1 space-y-6 border-l-4 border-[#2b3a63] pl-6">
+              {t.timeline.map((item, i) => (
+                <li key={i} className="relative">
+                  {/* pixel node on the line */}
+                  <span
+                    className="absolute -left-[31px] top-1 h-3.5 w-3.5"
+                    style={{ background: i % 2 ? '#6bb5ff' : '#5dba4a' }}
+                    aria-hidden="true"
+                  />
+                  <span className="font-pixel text-xs text-[#8fd0ff]">{item.year}</span>
+                  <p className="mt-1.5 text-sm leading-6 text-muted-foreground">{item.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>

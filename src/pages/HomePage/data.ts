@@ -138,6 +138,16 @@ export const STR = {
     aboutLine2:
       '我喜歡 我的世界（Minecraft），所以把這個網站做成了像素風。目前正在學習 C++、Python 和資料庫，目標是用程式把腦海裡的想法，像在遊戲裡堆方塊一樣，一塊一塊建造出來。',
     tags: ['正在學習編程', '像素愛好者', 'Minecraft 玩家', 'APEX 玩家'],
+    timelineChip: '學習旅程',
+    timeline: [
+      { year: '2022', text: '選修 ICT，慢慢認識 Python、HTML/CSS 與資料庫' },
+      { year: '2022', text: '加入 STEAM Team，玩一些簡單的 LEGO Robot' },
+      { year: '2023', text: '加入 VEX Team，上網尋找資料，完善機器人的功能' },
+      { year: '2023 · 12月', text: '去台灣比賽，拿到「建造獎」' },
+      { year: '2025', text: '進入 Asso，學習 C++' },
+      { year: '2026 · 暑假', text: '用 AI 輔助建立個人網站和一些小玩意，自學網站部署，並部署了第一個網站' },
+      { year: '2026 · 9月', text: '學習進階的資料庫' },
+    ],
     portfolioChip: 'PORTFOLIO · 作品集',
     portfolioTitle: '我的方塊世界',
     portfolioSub: '一些親手蓋出來的小作品。點擊卡片會直接打開對應的 GitHub 倉庫。',
@@ -161,6 +171,16 @@ export const STR = {
     aboutLine2:
       'I love Minecraft, so this site is pixel-styled. I am currently learning C++, Python and databases — turning ideas into reality block by block, just like in the game.',
     tags: ['Learning to code', 'Pixel Art Fan', 'Minecraft Player', 'APEX Gamer'],
+    timelineChip: 'MY JOURNEY',
+    timeline: [
+      { year: '2022', text: 'Took ICT as an elective — slowly learning Python, HTML/CSS and databases' },
+      { year: '2022', text: 'Joined the STEAM Team, playing with simple LEGO robots' },
+      { year: '2023', text: 'Joined the VEX Team, researching online to improve the robots' },
+      { year: 'Dec 2023', text: 'Went to Taiwan for a competition and won the Build Award' },
+      { year: '2025', text: 'Started Asso — learning C++' },
+      { year: 'Summer 2026', text: 'Built a personal website and small projects with AI assistance; self-taught deployment and launched the first site' },
+      { year: 'Sep 2026', text: 'Started learning advanced databases' },
+    ],
     portfolioChip: 'PORTFOLIO',
     portfolioTitle: 'My Block World',
     portfolioSub: "Small projects I've built by hand. Click a card to open its GitHub repo.",

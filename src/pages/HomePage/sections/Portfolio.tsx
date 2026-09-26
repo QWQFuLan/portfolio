@@ -34,11 +34,11 @@ function Stalactite({
 function CaveScene() {
   return (
     <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-      {/* stalactites from the cave ceiling */}
-      <Stalactite className="absolute left-[8%] top-0" />
-      <Stalactite height={64} className="absolute left-[21%] top-0" />
-      <Stalactite className="absolute right-[11%] top-0" />
-      <Stalactite height={56} className="absolute right-[29%] top-0" />
+      {/* stalactites from the cave ceiling — below the fixed navbar (64px) */}
+      <Stalactite className="absolute left-[8%] top-16" />
+      <Stalactite height={64} className="absolute left-[21%] top-16" />
+      <Stalactite className="absolute right-[11%] top-16" />
+      <Stalactite height={56} className="absolute right-[29%] top-16" />
     </div>
   );
 }

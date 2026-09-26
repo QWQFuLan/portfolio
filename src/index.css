@@ -1,4 +1,4 @@
-@import url('https://miaoda.feishu.cn/fonts/css2?family=Press+Start+2P&display=swap');
+﻿@import url('https://miaoda.feishu.cn/fonts/css2?family=Press+Start+2P&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./tailwind-theme.css";
@@ -9,7 +9,10 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 96px;
+  /* Anchor scrolls land the section top flush with the viewport top, so the
+     previous section's bottom (e.g. the hero grass strip & animals) never
+     lingers above; the fixed navbar simply covers each section's top padding. */
+  scroll-margin-top: 0;
 }
 
 /* ---------- Pixel / Minecraft style helpers ---------- */
