@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import TargetCursor from '@/components/reactbits/TargetCursor';
 import Navbar from './sections/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
@@ -16,6 +17,7 @@ export default function HomePage() {
     // The dark page background lives on <body>; this root stays transparent so
     // the page background shows through the content sections.
     <div className="min-h-screen text-foreground">
+      <TargetCursor targetSelector=".cursor-target, a, button" spinDuration={2} parallaxOn />
       <Navbar lang={lang} onToggleLang={() => setLang((l) => (l === 'zh' ? 'en' : 'zh'))} />
       <main>
         <Hero lang={lang} />

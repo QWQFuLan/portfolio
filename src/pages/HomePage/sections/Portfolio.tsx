@@ -45,7 +45,7 @@ function CaveScene() {
 
 function ProjectCard({ project, lang }: { project: Project; lang: Lang }) {
   return (
-    <div className="flex h-full flex-col justify-between bg-[#16202e] p-6 text-left">
+    <div className="cursor-target flex h-full flex-col justify-between bg-[#16202e] p-6 text-left">
       <div>
         <div className="flex items-center justify-between">
           <span

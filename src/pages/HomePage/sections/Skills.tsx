@@ -40,6 +40,7 @@ export default function Skills({ lang }: { lang: Lang }) {
           {SKILLS.map((skill) => (
             <FlipCard
               key={skill.id}
+              className="cursor-target"
               axis="y"
               flipOnClick
               draggable
