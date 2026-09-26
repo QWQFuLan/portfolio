@@ -66,12 +66,12 @@ export const SKILLS: Skill[] = [
     name: 'C++',
     nameEn: 'C++',
     color: '#5dba4a',
-    tagline: '指標 · 類別 · STL',
-    taglineEn: 'Pointers · Classes · STL',
-    detail: '正在學習 C++ 的指標、類別與物件、標準模板庫（STL），並用它練習資料結構與演算法。',
+    tagline: '指標 · 類別 · 物件',
+    taglineEn: 'Pointers · Classes · Objects',
+    detail: '正在學習 C++ 的指標、類別與物件，並用它練習寫程式。',
     detailEn:
-      'Learning pointers, classes, objects and the STL — practicing data structures and algorithms with C++.',
-    progress: 3,
+      'Learning pointers, classes and objects — practicing programming with C++.',
+    progress: 2,
   },
   {
     id: 'python',
@@ -84,7 +84,7 @@ export const SKILLS: Skill[] = [
     detail: '正在學習 Python 的基礎語法、函式與模組、資料處理，嘗試用它寫小工具解決日常問題。',
     detailEn:
       'Learning Python basics, functions, modules and data processing — writing small tools to solve everyday problems.',
-    progress: 3,
+    progress: 2,
   },
   {
     id: 'database',
@@ -97,7 +97,7 @@ export const SKILLS: Skill[] = [
     detail: '正在學習 SQL 與關聯式資料庫，練習設計資料表、外鍵關聯、查詢與統計分析。',
     detailEn:
       'Learning SQL and relational databases — designing tables, foreign keys, queries and analytics.',
-    progress: 2,
+    progress: 3,
   },
   {
     id: 'html',
@@ -107,9 +107,22 @@ export const SKILLS: Skill[] = [
     color: '#ff6b6b',
     tagline: '網頁標記 · 樣式',
     taglineEn: 'Markup & styling',
-    detail: '正在學習 HTML 與 CSS，用語義化標籤與像素風樣式，親手把這個網站一塊一塊做出來。',
+    detail: '正在學習 HTML 與 CSS，用語義化標籤與像素風樣式，並用 AI 輔助把這個網站做出來。',
     detailEn:
-      'Learning HTML & CSS — building this very site, block by block, with semantic markup and pixel styling.',
+      'Learning HTML & CSS — building this very site with AI assistance, using semantic markup and pixel styling.',
+    progress: 2,
+  },
+  {
+    id: 'ai',
+    badge: 'AI',
+    name: 'AI 工具',
+    nameEn: 'AI Tools',
+    color: '#a78bfa',
+    tagline: '探索 API · Codex · 應用',
+    taglineEn: 'API exploration · Codex · Apps',
+    detail: '正在用 AI 輔助開發：探索各種 API、用 Codex 寫程式，把 AI 應用到小專案裡。',
+    detailEn:
+      'Building with AI assistance — exploring APIs, using Codex for code, and applying AI in small projects.',
     progress: 2,
   },
   {
@@ -120,9 +133,9 @@ export const SKILLS: Skill[] = [
     color: '#ff9f6e',
     tagline: '今天也要進步一點點',
     taglineEn: 'One block every day',
-    detail: '學習中：網頁開發、演算法與更多程式語言。每天建造一點點，像在 Minecraft 裡慢慢蓋出城堡。',
+    detail: '學習中：網頁開發與更多程式語言。',
     detailEn:
-      'Currently learning web development, algorithms and more languages. Building a little every day, like stacking blocks in Minecraft.',
+      'Currently learning web development and more languages.',
     progress: 1,
   },
 ];
